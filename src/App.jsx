@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react';
 import './App.css';
 
-const post = (title, body) =>
-  fetch('https://jsonplaceholder.typicode.com/posts', {
+const post = (title, body) => {
+  return fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
     body: JSON.stringify({
       title,
@@ -13,6 +13,7 @@ const post = (title, body) =>
       'Content-type': 'application/json; charset=UTF-8',
     },
   }).then(response => response.json());
+};
 
 function handleErrors(title, body, setError) {
   const errors = {};
@@ -53,7 +54,7 @@ function App() {
     // start the submit
     setPosting(true);
 
-    const { id } = await post(title.value, body.value);
+    const { id } = await post(title, body);
 
     // just clear form (we're not handling errors)
     formRef.current.reset();
@@ -68,10 +69,10 @@ function App() {
       <div>{data === 0 ? 'Not Submitted' : `ID is ${data}`}</div>
 
       <form ref={formRef} className='form' onSubmit={handleSubmit}>
-        <input name='title' type='text' placeholder='title' />
+        <input name='title' id='title' type='text' placeholder='title' />
         {error.title && <label for='title'>{error.title}</label>}
 
-        <input name='body' type='text' placeholder='body' />
+        <input name='body' id='body' type='text' placeholder='body' />
         {error.body && <label for='body'>{error.body}</label>}
 
         <button type='submit' disabled={posting}>

@@ -97,23 +97,100 @@ describe('<App>', () => {
             });
 
             it('has called the API with', () => {
-              // title/body not being passed?
-              expect(window.fetch).toHaveBeenCalledWith();
+              expect(window.fetch).toHaveBeenCalledWith(
+                'https://jsonplaceholder.typicode.com/posts',
+                expect.objectContaining({
+                  method: 'POST',
+                  body: JSON.stringify({
+                    title: titleValue,
+                    body: bodyValue,
+                    userId: 'test',
+                  }),
+                }),
+              );
+            });
+
+            it('changes the text with the id', () => {
+              expect(
+                screen.queryByText('Not Submitted'),
+              ).not.toBeInTheDocument();
+              expect(screen.getByText('ID is foo')).toBeInTheDocument();
+            });
+
+            it('clears the form', () => {
+              expect(getTitle()).toHaveValue('');
+              expect(getBody()).toHaveValue('');
             });
           });
         });
       });
 
       describe('without inputing values', () => {
-        it('');
+        beforeEach(async () => {
+          await userEvent.click(getButton());
+        });
+
+        it('shows a title error', () => {
+          expect(screen.getByLabelText('Add a title')).toBeInTheDocument();
+        });
+
+        it('shows a body error', () => {
+          expect(screen.getByLabelText('Add a body')).toBeInTheDocument();
+        });
+
+        it('doesnt call the API', () => {
+          expect(window.fetch).toHaveBeenCalledTimes(0);
+        });
       });
 
       describe('inputing only the title', () => {
-        it('');
+        beforeEach(async () => {
+          await userEvent.type(getTitle(), titleValue);
+          await userEvent.click(getButton());
+        });
+
+        it('dont show a title error', () => {
+          expect(
+            screen.queryByLabelText('Add a title'),
+          ).not.toBeInTheDocument();
+        });
+
+        it('shows a body error', () => {
+          expect(screen.getByLabelText('Add a body')).toBeInTheDocument();
+        });
+
+        it('doesnt call the API', () => {
+          expect(window.fetch).toHaveBeenCalledTimes(0);
+        });
+
+        it('dont clear the form', () => {
+          expect(getTitle()).toHaveValue(titleValue);
+          expect(getBody()).toHaveValue('');
+        });
       });
 
       describe('inputing only the body', () => {
-        it('');
+        beforeEach(async () => {
+          await userEvent.type(getBody(), bodyValue);
+          await userEvent.click(getButton());
+        });
+
+        it('shows a title error', () => {
+          expect(screen.getByLabelText('Add a title')).toBeInTheDocument();
+        });
+
+        it('dont show a body error', () => {
+          expect(screen.queryByLabelText('Add a body')).not.toBeInTheDocument();
+        });
+
+        it('doesnt call the API', () => {
+          expect(window.fetch).toHaveBeenCalledTimes(0);
+        });
+
+        it('dont clear the form', () => {
+          expect(getTitle()).toHaveValue('');
+          expect(getBody()).toHaveValue(bodyValue);
+        });
       });
     });
   });
