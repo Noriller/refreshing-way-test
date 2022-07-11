@@ -19,6 +19,10 @@ describe('<App>', () => {
       render(<App />);
     });
 
+    afterEach(() => {
+      vi.clearAllMocks();
+    });
+
     it('renders text of not submitted', () => {
       expect(screen.getByText('Not Submitted')).toBeInTheDocument();
     });
@@ -68,12 +72,34 @@ describe('<App>', () => {
         });
 
         describe('when submitting', () => {
-          beforeEach(() => {
+          it('disables the button', async () => {
             userEvent.click(getButton());
+            await waitFor(() => {
+              expect(getButton()).toBeDisabled();
+            });
           });
 
-          it('disables the button', async () => {
-            expect(getButton()).toBeDisabled();
+          describe('after api call complete', () => {
+            beforeEach(async () => {
+              await userEvent.click(getButton());
+            });
+
+            it('reenables the button', () => {
+              expect(getButton()).toBeEnabled();
+            });
+
+            it('renders the id', async () => {
+              expect(screen.getByText('ID is foo')).toBeInTheDocument();
+            });
+
+            it('has called the API once', () => {
+              expect(window.fetch).toHaveBeenCalledTimes(1);
+            });
+
+            it('has called the API with', () => {
+              // title/body not being passed?
+              expect(window.fetch).toHaveBeenCalledWith();
+            });
           });
         });
       });
