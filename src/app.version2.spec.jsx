@@ -2,7 +2,7 @@ import { vi } from 'vitest';
 import { render, screen, userEvent, waitFor } from '../test-utils';
 import App from './App';
 
-describe('<App>', () => {
+describe('<App>', async () => {
   window.fetch = vi.fn().mockResolvedValue({
     json: () => ({ id: 'foo' }),
   });
@@ -22,7 +22,23 @@ describe('<App>', () => {
     }
   }
 
-  describe('on default render', () => {
+  const titleValue = 'my title';
+  const bodyValue = 'my body';
+
+  const inputValues = async () => {
+    await userEvent.type(getTitle(), titleValue);
+    await userEvent.type(getBody(), bodyValue);
+  };
+  const inputTitle = async () => {
+    await userEvent.type(getTitle(), titleValue);
+  };
+  const inputBody = async () => {
+    await userEvent.type(getBody(), bodyValue);
+  };
+
+  const clickButton = async () => await userEvent.click(getButton());
+
+  describe('on default render', async () => {
     afterEach(() => {
       vi.clearAllMocks();
     });
@@ -42,7 +58,7 @@ describe('<App>', () => {
       expect(getBody()).toBeInTheDocument();
     });
 
-    describe('renders a button', () => {
+    describe('renders a button', async () => {
       it('with submit text', async () => {
         await setup();
         expect(getButton()).toBeInTheDocument();
@@ -64,16 +80,8 @@ describe('<App>', () => {
       expect(screen.queryByLabelText('body')).not.toBeInTheDocument();
     });
 
-    describe('when you submit a form', () => {
-      const titleValue = 'my title';
-      const bodyValue = 'my body';
-
-      describe('inputing both values', () => {
-        const inputValues = async () => {
-          await userEvent.type(getTitle(), titleValue);
-          await userEvent.type(getBody(), bodyValue);
-        };
-
+    describe('when you submit a form', async () => {
+      describe('inputing both values', async () => {
         it('the title input has the inputed value', async () => {
           await setup(inputValues);
           expect(getTitle()).toHaveValue(titleValue);
@@ -84,32 +92,33 @@ describe('<App>', () => {
           expect(getBody()).toHaveValue(bodyValue);
         });
 
-        describe('when submitting', () => {
+        describe('when submitting', async () => {
           it('disables the button', async () => {
+            await setup(inputValues);
             userEvent.click(getButton());
             await waitFor(() => {
               expect(getButton()).toBeDisabled();
             });
           });
 
-          describe('after api call complete', () => {
-            beforeEach(async () => {
-              await userEvent.click(getButton());
-            });
-
-            it('reenables the button', () => {
+          describe('after api call complete', async () => {
+            it('reenables the button', async () => {
+              await setup(inputValues, clickButton);
               expect(getButton()).toBeEnabled();
             });
 
             it('renders the id', async () => {
+              await setup(inputValues, clickButton);
               expect(screen.getByText('ID is foo')).toBeInTheDocument();
             });
 
-            it('has called the API once', () => {
+            it('has called the API once', async () => {
+              await setup(inputValues, clickButton);
               expect(window.fetch).toHaveBeenCalledTimes(1);
             });
 
-            it('has called the API with', () => {
+            it('has called the API with', async () => {
+              await setup(inputValues, clickButton);
               expect(window.fetch).toHaveBeenCalledWith(
                 'https://jsonplaceholder.typicode.com/posts',
                 expect.objectContaining({
@@ -123,14 +132,16 @@ describe('<App>', () => {
               );
             });
 
-            it('changes the text with the id', () => {
+            it('changes the text with the id', async () => {
+              await setup(inputValues, clickButton);
               expect(
                 screen.queryByText('Not Submitted'),
               ).not.toBeInTheDocument();
               expect(screen.getByText('ID is foo')).toBeInTheDocument();
             });
 
-            it('clears the form', () => {
+            it('clears the form', async () => {
+              await setup(inputValues, clickButton);
               expect(getTitle()).toHaveValue('');
               expect(getBody()).toHaveValue('');
             });
@@ -138,69 +149,66 @@ describe('<App>', () => {
         });
       });
 
-      describe('without inputing values', () => {
-        beforeEach(async () => {
-          await userEvent.click(getButton());
-        });
-
-        it('shows a title error', () => {
+      describe('without inputing values', async () => {
+        it('shows a title error', async () => {
+          await setup(clickButton);
           expect(screen.getByLabelText('Add a title')).toBeInTheDocument();
         });
 
-        it('shows a body error', () => {
+        it('shows a body error', async () => {
+          await setup(clickButton);
           expect(screen.getByLabelText('Add a body')).toBeInTheDocument();
         });
 
-        it('doesnt call the API', () => {
+        it('doesnt call the API', async () => {
+          await setup(clickButton);
           expect(window.fetch).toHaveBeenCalledTimes(0);
         });
       });
 
-      describe('inputing only the title', () => {
-        beforeEach(async () => {
-          await userEvent.type(getTitle(), titleValue);
-          await userEvent.click(getButton());
-        });
-
-        it('dont show a title error', () => {
+      describe('inputing only the title', async () => {
+        it('dont show a title error', async () => {
+          await setup(inputTitle, clickButton);
           expect(
             screen.queryByLabelText('Add a title'),
           ).not.toBeInTheDocument();
         });
 
-        it('shows a body error', () => {
+        it('shows a body error', async () => {
+          await setup(inputTitle, clickButton);
           expect(screen.getByLabelText('Add a body')).toBeInTheDocument();
         });
 
-        it('doesnt call the API', () => {
+        it('doesnt call the API', async () => {
+          await setup(inputTitle, clickButton);
           expect(window.fetch).toHaveBeenCalledTimes(0);
         });
 
-        it('dont clear the form', () => {
+        it('dont clear the form', async () => {
+          await setup(inputTitle, clickButton);
           expect(getTitle()).toHaveValue(titleValue);
           expect(getBody()).toHaveValue('');
         });
       });
 
-      describe('inputing only the body', () => {
-        beforeEach(async () => {
-          await userEvent.type(getBody(), bodyValue);
-          await userEvent.click(getButton());
-        });
-
-        it('shows a title error', () => {
+      describe('inputing only the body', async () => {
+        it('shows a title error', async () => {
+          await setup(inputBody, clickButton);
           expect(screen.getByLabelText('Add a title')).toBeInTheDocument();
         });
 
-        it('dont show a body error', () => {
+        it('dont show a body error', async () => {
+          await setup(inputBody, clickButton);
           expect(screen.queryByLabelText('Add a body')).not.toBeInTheDocument();
         });
 
-        it('doesnt call the API', () => {
+        it('doesnt call the API', async () => {
+          await setup(inputBody, clickButton);
           expect(window.fetch).toHaveBeenCalledTimes(0);
         });
 
-        it('dont clear the form', () => {
+        it('dont clear the form', async () => {
+          await setup(inputBody, clickButton);
           expect(getTitle()).toHaveValue('');
           expect(getBody()).toHaveValue(bodyValue);
         });
