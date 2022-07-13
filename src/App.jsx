@@ -70,10 +70,10 @@ function App() {
 
       <form ref={formRef} className='form' onSubmit={handleSubmit}>
         <input name='title' id='title' type='text' placeholder='title' />
-        {error.title && <label for='title'>{error.title}</label>}
+        {error.title && <label htmlFor='title'>{error.title}</label>}
 
         <input name='body' id='body' type='text' placeholder='body' />
-        {error.body && <label for='body'>{error.body}</label>}
+        {error.body && <label htmlFor='body'>{error.body}</label>}
 
         <button type='submit' disabled={posting}>
           Submit
