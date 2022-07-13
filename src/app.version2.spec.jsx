@@ -2,7 +2,7 @@ import { vi } from 'vitest';
 import { render, screen, userEvent, waitFor } from '../test-utils';
 import App from './App';
 
-describe('<App>', async () => {
+describe('<App>', () => {
   window.fetch = vi.fn().mockResolvedValue({
     json: () => ({ id: 'foo' }),
   });
@@ -38,7 +38,7 @@ describe('<App>', async () => {
 
   const clickButton = async () => await userEvent.click(getButton());
 
-  describe('on default render', async () => {
+  describe('on default render', () => {
     afterEach(() => {
       vi.clearAllMocks();
     });
@@ -58,7 +58,7 @@ describe('<App>', async () => {
       expect(getBody()).toBeInTheDocument();
     });
 
-    describe('renders a button', async () => {
+    describe('renders a button', () => {
       it('with submit text', async () => {
         await setup();
         expect(getButton()).toBeInTheDocument();
@@ -80,8 +80,8 @@ describe('<App>', async () => {
       expect(screen.queryByLabelText('body')).not.toBeInTheDocument();
     });
 
-    describe('when you submit a form', async () => {
-      describe('inputing both values', async () => {
+    describe('when you submit a form', () => {
+      describe('inputing both values', () => {
         it('the title input has the inputed value', async () => {
           await setup(inputValues);
           expect(getTitle()).toHaveValue(titleValue);
@@ -92,7 +92,7 @@ describe('<App>', async () => {
           expect(getBody()).toHaveValue(bodyValue);
         });
 
-        describe('when submitting', async () => {
+        describe('when submitting', () => {
           it('disables the button', async () => {
             await setup(inputValues);
             userEvent.click(getButton());
@@ -101,7 +101,7 @@ describe('<App>', async () => {
             });
           });
 
-          describe('after api call complete', async () => {
+          describe('after api call complete', () => {
             it('reenables the button', async () => {
               await setup(inputValues, clickButton);
               expect(getButton()).toBeEnabled();
@@ -149,7 +149,7 @@ describe('<App>', async () => {
         });
       });
 
-      describe('without inputing values', async () => {
+      describe('without inputing values', () => {
         it('shows a title error', async () => {
           await setup(clickButton);
           expect(screen.getByLabelText('Add a title')).toBeInTheDocument();
@@ -166,7 +166,7 @@ describe('<App>', async () => {
         });
       });
 
-      describe('inputing only the title', async () => {
+      describe('inputing only the title', () => {
         it('dont show a title error', async () => {
           await setup(inputTitle, clickButton);
           expect(
@@ -191,7 +191,7 @@ describe('<App>', async () => {
         });
       });
 
-      describe('inputing only the body', async () => {
+      describe('inputing only the body', () => {
         it('shows a title error', async () => {
           await setup(inputBody, clickButton);
           expect(screen.getByLabelText('Add a title')).toBeInTheDocument();
