@@ -14,9 +14,7 @@ describe('<App>', () => {
   const getBody = () => screen.getByPlaceholderText('body');
   const getButton = () => screen.getByRole('button', { name: 'Submit' });
 
-  async function setup() {
-    render(<App />);
-  }
+  const setup = () => render(<App />);
 
   const titleValue = 'my title';
   const bodyValue = 'my body';
@@ -40,59 +38,59 @@ describe('<App>', () => {
     });
 
     it('renders text of not submitted', async () => {
-      await setup();
+      setup();
       expect(screen.getByText('Not Submitted')).toBeInTheDocument();
     });
 
     it('renders input for title', async () => {
-      await setup();
+      setup();
       expect(getTitle()).toBeInTheDocument();
     });
 
     it('renders input for body', async () => {
-      await setup();
+      setup();
       expect(getBody()).toBeInTheDocument();
     });
 
     describe('renders a button', () => {
       it('with submit text', async () => {
-        await setup();
+        setup();
         expect(getButton()).toBeInTheDocument();
       });
 
       it('that is enabled', async () => {
-        await setup();
+        setup();
         expect(getButton()).toBeEnabled();
       });
     });
 
     it('dont render the title error label', async () => {
-      await setup();
+      setup();
       expect(screen.queryByLabelText('title')).not.toBeInTheDocument();
     });
 
     it('dont render the body error label', async () => {
-      await setup();
+      setup();
       expect(screen.queryByLabelText('body')).not.toBeInTheDocument();
     });
 
     describe('when you submit a form', () => {
       describe('inputing both values', () => {
         it('the title input has the inputed value', async () => {
-          await setup();
+          setup();
           await inputValues();
           expect(getTitle()).toHaveValue(titleValue);
         });
 
         it('the body input has the inputed value', async () => {
-          await setup();
+          setup();
           await inputValues();
           expect(getBody()).toHaveValue(bodyValue);
         });
 
         describe('when submitting', () => {
           it('disables the button', async () => {
-            await setup();
+            setup();
             await inputValues();
             clickButton();
             await waitFor(() => {
@@ -102,28 +100,28 @@ describe('<App>', () => {
 
           describe('after api call complete', () => {
             it('reenables the button', async () => {
-              await setup();
+              setup();
               await inputValues();
               await clickButton();
               expect(getButton()).toBeEnabled();
             });
 
             it('renders the id', async () => {
-              await setup();
+              setup();
               await inputValues();
               await clickButton();
               expect(screen.getByText('ID is foo')).toBeInTheDocument();
             });
 
             it('has called the API once', async () => {
-              await setup();
+              setup();
               await inputValues();
               await clickButton();
               expect(window.fetch).toHaveBeenCalledTimes(1);
             });
 
             it('has called the API with', async () => {
-              await setup();
+              setup();
               await inputValues();
               await clickButton();
               expect(window.fetch).toHaveBeenCalledWith(
@@ -140,7 +138,7 @@ describe('<App>', () => {
             });
 
             it('changes the text with the id', async () => {
-              await setup();
+              setup();
               await inputValues();
               await clickButton();
               expect(
@@ -150,7 +148,7 @@ describe('<App>', () => {
             });
 
             it('clears the form', async () => {
-              await setup();
+              setup();
               await inputValues();
               await clickButton();
               expect(getTitle()).toHaveValue('');
@@ -162,19 +160,19 @@ describe('<App>', () => {
 
       describe('without inputing values', () => {
         it('shows a title error', async () => {
-          await setup();
+          setup();
           await clickButton();
           expect(screen.getByLabelText('Add a title')).toBeInTheDocument();
         });
 
         it('shows a body error', async () => {
-          await setup();
+          setup();
           await clickButton();
           expect(screen.getByLabelText('Add a body')).toBeInTheDocument();
         });
 
         it('doesnt call the API', async () => {
-          await setup();
+          setup();
           await clickButton();
           expect(window.fetch).toHaveBeenCalledTimes(0);
         });
@@ -182,7 +180,7 @@ describe('<App>', () => {
 
       describe('inputing only the title', () => {
         it('dont show a title error', async () => {
-          await setup();
+          setup();
           await inputTitle();
           await clickButton();
           expect(
@@ -191,21 +189,21 @@ describe('<App>', () => {
         });
 
         it('shows a body error', async () => {
-          await setup();
+          setup();
           await inputTitle();
           await clickButton();
           expect(screen.getByLabelText('Add a body')).toBeInTheDocument();
         });
 
         it('doesnt call the API', async () => {
-          await setup();
+          setup();
           await inputTitle();
           await clickButton();
           expect(window.fetch).toHaveBeenCalledTimes(0);
         });
 
         it('dont clear the form', async () => {
-          await setup();
+          setup();
           await inputTitle();
           await clickButton();
           expect(getTitle()).toHaveValue(titleValue);
@@ -215,28 +213,28 @@ describe('<App>', () => {
 
       describe('inputing only the body', () => {
         it('shows a title error', async () => {
-          await setup();
+          setup();
           await inputBody();
           await clickButton();
           expect(screen.getByLabelText('Add a title')).toBeInTheDocument();
         });
 
         it('dont show a body error', async () => {
-          await setup();
+          setup();
           await inputBody();
           await clickButton();
           expect(screen.queryByLabelText('Add a body')).not.toBeInTheDocument();
         });
 
         it('doesnt call the API', async () => {
-          await setup();
+          setup();
           await inputBody();
           await clickButton();
           expect(window.fetch).toHaveBeenCalledTimes(0);
         });
 
         it('dont clear the form', async () => {
-          await setup();
+          setup();
           await inputBody();
           await clickButton();
           expect(getTitle()).toHaveValue('');
