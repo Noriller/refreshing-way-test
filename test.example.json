@@ -1,0 +1,751 @@
+{
+  "numTotalTestSuites": 22,
+  "numPassedTestSuites": 22,
+  "numFailedTestSuites": 0,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 54,
+  "numPassedTests": 54,
+  "numFailedTests": 0,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "startTime": 1657982524690,
+  "success": true,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["", "<App>", "on default render"],
+          "fullName": " <App> on default render renders text of not submitted",
+          "status": "passed",
+          "title": "renders text of not submitted",
+          "duration": 31,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["", "<App>", "on default render"],
+          "fullName": " <App> on default render renders input for title",
+          "status": "passed",
+          "title": "renders input for title",
+          "duration": 6,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["", "<App>", "on default render"],
+          "fullName": " <App> on default render renders input for body",
+          "status": "passed",
+          "title": "renders input for body",
+          "duration": 4,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "renders a button"
+          ],
+          "fullName": " <App> on default render renders a button with submit text",
+          "status": "passed",
+          "title": "with submit text",
+          "duration": 48,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "renders a button"
+          ],
+          "fullName": " <App> on default render renders a button that is enabled",
+          "status": "passed",
+          "title": "that is enabled",
+          "duration": 20,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["", "<App>", "on default render"],
+          "fullName": " <App> on default render dont render the title error label",
+          "status": "passed",
+          "title": "dont render the title error label",
+          "duration": 4,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["", "<App>", "on default render"],
+          "fullName": " <App> on default render dont render the body error label",
+          "status": "passed",
+          "title": "dont render the body error label",
+          "duration": 3,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values the title input has the inputed value",
+          "status": "passed",
+          "title": "the title input has the inputed value",
+          "duration": 79,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values the body input has the inputed value",
+          "status": "passed",
+          "title": "the body input has the inputed value",
+          "duration": 67,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values",
+            "when submitting"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values when submitting disables the button",
+          "status": "passed",
+          "title": "disables the button",
+          "duration": 106,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values",
+            "when submitting",
+            "after api call complete"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values when submitting after api call complete reenables the button",
+          "status": "passed",
+          "title": "reenables the button",
+          "duration": 90,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values",
+            "when submitting",
+            "after api call complete"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values when submitting after api call complete renders the id",
+          "status": "passed",
+          "title": "renders the id",
+          "duration": 75,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values",
+            "when submitting",
+            "after api call complete"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values when submitting after api call complete has called the API once",
+          "status": "passed",
+          "title": "has called the API once",
+          "duration": 71,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values",
+            "when submitting",
+            "after api call complete"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values when submitting after api call complete has called the API with",
+          "status": "passed",
+          "title": "has called the API with",
+          "duration": 75,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values",
+            "when submitting",
+            "after api call complete"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values when submitting after api call complete changes the text with the id",
+          "status": "passed",
+          "title": "changes the text with the id",
+          "duration": 73,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values",
+            "when submitting",
+            "after api call complete"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values when submitting after api call complete clears the form",
+          "status": "passed",
+          "title": "clears the form",
+          "duration": 63,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "without inputing values"
+          ],
+          "fullName": " <App> on default render when you submit a form without inputing values shows a title error",
+          "status": "passed",
+          "title": "shows a title error",
+          "duration": 25,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "without inputing values"
+          ],
+          "fullName": " <App> on default render when you submit a form without inputing values shows a body error",
+          "status": "passed",
+          "title": "shows a body error",
+          "duration": 29,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "without inputing values"
+          ],
+          "fullName": " <App> on default render when you submit a form without inputing values doesnt call the API",
+          "status": "passed",
+          "title": "doesnt call the API",
+          "duration": 18,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing only the title"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing only the title dont show a title error",
+          "status": "passed",
+          "title": "dont show a title error",
+          "duration": 40,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing only the title"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing only the title shows a body error",
+          "status": "passed",
+          "title": "shows a body error",
+          "duration": 45,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing only the title"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing only the title doesnt call the API",
+          "status": "passed",
+          "title": "doesnt call the API",
+          "duration": 40,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing only the title"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing only the title dont clear the form",
+          "status": "passed",
+          "title": "dont clear the form",
+          "duration": 42,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing only the body"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing only the body shows a title error",
+          "status": "passed",
+          "title": "shows a title error",
+          "duration": 39,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing only the body"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing only the body dont show a body error",
+          "status": "passed",
+          "title": "dont show a body error",
+          "duration": 41,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing only the body"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing only the body doesnt call the API",
+          "status": "passed",
+          "title": "doesnt call the API",
+          "duration": 40,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing only the body"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing only the body dont clear the form",
+          "status": "passed",
+          "title": "dont clear the form",
+          "duration": 43,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1657982526443,
+      "endTime": 1657982527660,
+      "status": "passed",
+      "message": "",
+      "name": "/home/noriller/git/refreshing-way-test/src/app.version2.spec.jsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": ["", "<App>", "on default render"],
+          "fullName": " <App> on default render renders text of not submitted",
+          "status": "passed",
+          "title": "renders text of not submitted",
+          "duration": 31,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["", "<App>", "on default render"],
+          "fullName": " <App> on default render renders input for title",
+          "status": "passed",
+          "title": "renders input for title",
+          "duration": 6,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["", "<App>", "on default render"],
+          "fullName": " <App> on default render renders input for body",
+          "status": "passed",
+          "title": "renders input for body",
+          "duration": 4,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "renders a button"
+          ],
+          "fullName": " <App> on default render renders a button with submit text",
+          "status": "passed",
+          "title": "with submit text",
+          "duration": 47,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "renders a button"
+          ],
+          "fullName": " <App> on default render renders a button that is enabled",
+          "status": "passed",
+          "title": "that is enabled",
+          "duration": 17,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["", "<App>", "on default render"],
+          "fullName": " <App> on default render dont render the title error label",
+          "status": "passed",
+          "title": "dont render the title error label",
+          "duration": 4,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": ["", "<App>", "on default render"],
+          "fullName": " <App> on default render dont render the body error label",
+          "status": "passed",
+          "title": "dont render the body error label",
+          "duration": 3,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values the title input has the inputed value",
+          "status": "passed",
+          "title": "the title input has the inputed value",
+          "duration": 78,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values the body input has the inputed value",
+          "status": "passed",
+          "title": "the body input has the inputed value",
+          "duration": 61,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values",
+            "when submitting"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values when submitting disables the button",
+          "status": "passed",
+          "title": "disables the button",
+          "duration": 99,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values",
+            "when submitting",
+            "after api call complete"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values when submitting after api call complete reenables the button",
+          "status": "passed",
+          "title": "reenables the button",
+          "duration": 81,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values",
+            "when submitting",
+            "after api call complete"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values when submitting after api call complete renders the id",
+          "status": "passed",
+          "title": "renders the id",
+          "duration": 71,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values",
+            "when submitting",
+            "after api call complete"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values when submitting after api call complete has called the API once",
+          "status": "passed",
+          "title": "has called the API once",
+          "duration": 72,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values",
+            "when submitting",
+            "after api call complete"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values when submitting after api call complete has called the API with",
+          "status": "passed",
+          "title": "has called the API with",
+          "duration": 67,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values",
+            "when submitting",
+            "after api call complete"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values when submitting after api call complete changes the text with the id",
+          "status": "passed",
+          "title": "changes the text with the id",
+          "duration": 77,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing both values",
+            "when submitting",
+            "after api call complete"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing both values when submitting after api call complete clears the form",
+          "status": "passed",
+          "title": "clears the form",
+          "duration": 65,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "without inputing values"
+          ],
+          "fullName": " <App> on default render when you submit a form without inputing values shows a title error",
+          "status": "passed",
+          "title": "shows a title error",
+          "duration": 21,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "without inputing values"
+          ],
+          "fullName": " <App> on default render when you submit a form without inputing values shows a body error",
+          "status": "passed",
+          "title": "shows a body error",
+          "duration": 24,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "without inputing values"
+          ],
+          "fullName": " <App> on default render when you submit a form without inputing values doesnt call the API",
+          "status": "passed",
+          "title": "doesnt call the API",
+          "duration": 18,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing only the title"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing only the title dont show a title error",
+          "status": "passed",
+          "title": "dont show a title error",
+          "duration": 42,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing only the title"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing only the title shows a body error",
+          "status": "passed",
+          "title": "shows a body error",
+          "duration": 41,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing only the title"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing only the title doesnt call the API",
+          "status": "passed",
+          "title": "doesnt call the API",
+          "duration": 42,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing only the title"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing only the title dont clear the form",
+          "status": "passed",
+          "title": "dont clear the form",
+          "duration": 42,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing only the body"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing only the body shows a title error",
+          "status": "passed",
+          "title": "shows a title error",
+          "duration": 41,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing only the body"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing only the body dont show a body error",
+          "status": "passed",
+          "title": "dont show a body error",
+          "duration": 38,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing only the body"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing only the body doesnt call the API",
+          "status": "passed",
+          "title": "doesnt call the API",
+          "duration": 46,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "<App>",
+            "on default render",
+            "when you submit a form",
+            "inputing only the body"
+          ],
+          "fullName": " <App> on default render when you submit a form inputing only the body dont clear the form",
+          "status": "passed",
+          "title": "dont clear the form",
+          "duration": 41,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1657982526443,
+      "endTime": 1657982527623,
+      "status": "passed",
+      "message": "",
+      "name": "/home/noriller/git/refreshing-way-test/src/app.spec.jsx"
+    }
+  ]
+}

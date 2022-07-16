@@ -7,7 +7,9 @@
     "build": "vite build",
     "test": "vitest",
     "test:cov": "vitest run --coverage",
+    "test:json": "vitest --reporter json",
     "test:ui": "vitest --ui",
+    "test:verbose": "vitest --reporter verbose",
     "preview": "vite preview"
   },
   "dependencies": {
