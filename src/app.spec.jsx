@@ -57,17 +57,17 @@ describe('<App>', () => {
       const titleValue = 'my title';
       const bodyValue = 'my body';
 
-      describe('inputing both values', () => {
+      describe('inputting both values', () => {
         beforeEach(async () => {
           await userEvent.type(getTitle(), titleValue);
           await userEvent.type(getBody(), bodyValue);
         });
 
-        it('the title input has the inputed value', () => {
+        it('the title input has the input value', () => {
           expect(getTitle()).toHaveValue(titleValue);
         });
 
-        it('the body input has the inputed value', () => {
+        it('the body input has the input value', () => {
           expect(getBody()).toHaveValue(bodyValue);
         });
 
@@ -125,7 +125,7 @@ describe('<App>', () => {
         });
       });
 
-      describe('without inputing values', () => {
+      describe('without inputting values', () => {
         beforeEach(async () => {
           await userEvent.click(getButton());
         });
@@ -143,7 +143,7 @@ describe('<App>', () => {
         });
       });
 
-      describe('inputing only the title', () => {
+      describe('inputting only the title', () => {
         beforeEach(async () => {
           await userEvent.type(getTitle(), titleValue);
           await userEvent.click(getButton());
@@ -169,7 +169,7 @@ describe('<App>', () => {
         });
       });
 
-      describe('inputing only the body', () => {
+      describe('inputting only the body', () => {
         beforeEach(async () => {
           await userEvent.type(getBody(), bodyValue);
           await userEvent.click(getButton());

@@ -75,14 +75,14 @@ describe('<App>', () => {
     });
 
     describe('when you submit a form', () => {
-      describe('inputing both values', () => {
-        it('the title input has the inputed value', async () => {
+      describe('inputting both values', () => {
+        it('the title input has the input value', async () => {
           setup();
           await inputValues();
           expect(getTitle()).toHaveValue(titleValue);
         });
 
-        it('the body input has the inputed value', async () => {
+        it('the body input has the input value', async () => {
           setup();
           await inputValues();
           expect(getBody()).toHaveValue(bodyValue);
@@ -158,7 +158,7 @@ describe('<App>', () => {
         });
       });
 
-      describe('without inputing values', () => {
+      describe('without inputting values', () => {
         it('shows a title error', async () => {
           setup();
           await clickButton();
@@ -178,7 +178,7 @@ describe('<App>', () => {
         });
       });
 
-      describe('inputing only the title', () => {
+      describe('inputting only the title', () => {
         it('dont show a title error', async () => {
           setup();
           await inputTitle();
@@ -211,7 +211,7 @@ describe('<App>', () => {
         });
       });
 
-      describe('inputing only the body', () => {
+      describe('inputting only the body', () => {
         it('shows a title error', async () => {
           setup();
           await inputBody();
