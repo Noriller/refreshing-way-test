@@ -14,13 +14,15 @@ yarn install --frozen-lockfile
 yarn test
 ```
 
-## Why two versions?
+## Why three versions?
 
 The first version is in a way I believe to be "cleaner", basically using nested `describe` blocks with `beforeEach` to set up the environment.
 
 While the second version is more verbose, less DRY, but more explicit on each test since you know for each test directly what's going on.
 
-But, regardless of which version you choose, focus on the `describe` and `it`/`test` blocks.
+The third one is probably the "common" one, where you put all expectations in one block. This is the one we use the most out there and also the one I felt I couldn't express myself or what the test is doing. It certainly is the fastest one to run, but it has so many expectations that you either say it tests just a slice of that, maybe using some generic phrasing or you would have to put a lot of "and".
+
+But, regardless of which version you choose between the first two, focus on the `describe` and `it`/`test` blocks.
 
 Remember the 3A's of testing?
 
